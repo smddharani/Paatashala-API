@@ -1,0 +1,766 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3560F5E4-D2FB-4B8A-818D-EA6DA4BCDFE6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMSMobileAppAPI</RootNamespace>
+    <AssemblyName>SMSMobileAppAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppManagerController.cs" />
+    <Compile Include="Controllers\AssesmentReportController.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\ChangePasswordBindingModel.cs" />
+    <Compile Include="Controllers\BatchController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\ExamController.cs" />
+    <Compile Include="Controllers\FacultyController.cs" />
+    <Compile Include="Controllers\FeeDetailController.cs" />
+    <Compile Include="Controllers\ForgetPasswordController.cs" />
+    <Compile Include="Controllers\GeoLocationController.cs" />
+    <Compile Include="Controllers\HolidayController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeworkController.cs" />
+    <Compile Include="Controllers\ParentRegistrationController.cs" />
+    <Compile Include="Controllers\PersonalDetailController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\SchoolController.cs" />
+    <Compile Include="Controllers\SubjectsController.cs" />
+    <Compile Include="Controllers\TimetableController.cs" />
+    <Compile Include="Controllers\TransportController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserInfoViewModel.cs" />
+    <Compile Include="Controllers\UserLoginInfoViewModel.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HelperObject\CustomResponse.cs" />
+    <Compile Include="Model Class\Assesment.cs" />
+    <Compile Include="Model Class\AttendanceEntry.cs" />
+    <Compile Include="Model Class\Exam.cs" />
+    <Compile Include="Model Class\Faculty.cs" />
+    <Compile Include="Model Class\Fees.cs" />
+    <Compile Include="Model Class\Holiday.cs" />
+    <Compile Include="Model Class\Homework.cs" />
+    <Compile Include="Model Class\Subject.cs" />
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CounsellorNote.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Mapping\CounsellorNoteMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\tblAccountGroupMap.cs" />
+    <Compile Include="Models\Mapping\tblAccountLedgerMap.cs" />
+    <Compile Include="Models\Mapping\tblAdmissionStatusTypeMap.cs" />
+    <Compile Include="Models\Mapping\tblAffiliationMap.cs" />
+    <Compile Include="Models\Mapping\tblApplicationLogMap.cs" />
+    <Compile Include="Models\Mapping\tblAppLoginMap.cs" />
+    <Compile Include="Models\Mapping\tblAppVersionMap.cs" />
+    <Compile Include="Models\Mapping\tblAssetAttributeMap.cs" />
+    <Compile Include="Models\Mapping\tblAssetCategoryAttributeMap.cs" />
+    <Compile Include="Models\Mapping\tblAssetCategoryMap.cs" />
+    <Compile Include="Models\Mapping\tblAssetMap.cs" />
+    <Compile Include="Models\Mapping\tblAssignmentMap.cs" />
+    <Compile Include="Models\Mapping\tblAssignmentQuestionMap.cs" />
+    <Compile Include="Models\Mapping\tblAttendanceHourlyMap.cs" />
+    <Compile Include="Models\Mapping\tblAttendanceMap.cs" />
+    <Compile Include="Models\Mapping\tblAttributeTypeMap.cs" />
+    <Compile Include="Models\Mapping\tblBankDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblBarCodeSymbologyMap.cs" />
+    <Compile Include="Models\Mapping\tblBatchAdmissionArchiveMap.cs" />
+    <Compile Include="Models\Mapping\tblBatchAdmissionMap.cs" />
+    <Compile Include="Models\Mapping\tblBatchAdmissionPastMap.cs" />
+    <Compile Include="Models\Mapping\tblBatchMap.cs" />
+    <Compile Include="Models\Mapping\tblBlockAttributesCCEMap.cs" />
+    <Compile Include="Models\Mapping\tblBlockCCEMap.cs" />
+    <Compile Include="Models\Mapping\tblBranchMap.cs" />
+    <Compile Include="Models\Mapping\tblCasteMap.cs" />
+    <Compile Include="Models\Mapping\tblCertificateMap.cs" />
+    <Compile Include="Models\Mapping\tblChallan_InvoiceDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblChallan_InvoiceHeaderMap.cs" />
+    <Compile Include="Models\Mapping\tblCircularMap.cs" />
+    <Compile Include="Models\Mapping\tblCounsellorMap.cs" />
+    <Compile Include="Models\Mapping\tblCourseFeeDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblCourseMap.cs" />
+    <Compile Include="Models\Mapping\tblCourse_SubjectMap.cs" />
+    <Compile Include="Models\Mapping\tblCustomerMap.cs" />
+    <Compile Include="Models\Mapping\tblDatabaseLogMap.cs" />
+    <Compile Include="Models\Mapping\tblDepartmentMap.cs" />
+    <Compile Include="Models\Mapping\tblDesignationMap.cs" />
+    <Compile Include="Models\Mapping\tblDietaryItemMap.cs" />
+    <Compile Include="Models\Mapping\tblDietPlanDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblDietPlanMap.cs" />
+    <Compile Include="Models\Mapping\tblDiscountTypeMap.cs" />
+    <Compile Include="Models\Mapping\tblDriverMap.cs" />
+    <Compile Include="Models\Mapping\tblEmployeeAdditionalInfoMap.cs" />
+    <Compile Include="Models\Mapping\tblEmployeeAttachmentMap.cs" />
+    <Compile Include="Models\Mapping\tblEmployeeAttendanceMap.cs" />
+    <Compile Include="Models\Mapping\tblEmployeeLeaveTypeMap.cs" />
+    <Compile Include="Models\Mapping\tblEmployeeMap.cs" />
+    <Compile Include="Models\Mapping\tblEmployeeSalaryComponentMap.cs" />
+    <Compile Include="Models\Mapping\tblEmpSalaryDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblEventMap.cs" />
+    <Compile Include="Models\Mapping\tblEventTypeMap.cs" />
+    <Compile Include="Models\Mapping\tblExamHallMap.cs" />
+    <Compile Include="Models\Mapping\tblExamMarkMap.cs" />
+    <Compile Include="Models\Mapping\tblExamScheduleMap.cs" />
+    <Compile Include="Models\Mapping\tblExamTypeMap.cs" />
+    <Compile Include="Models\Mapping\tblFeeInstallmentDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblFeeItemDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblFeeLedgerGroupMap.cs" />
+    <Compile Include="Models\Mapping\tblFeePaidDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblFeePaymentModeMap.cs" />
+    <Compile Include="Models\Mapping\tblFormativeAssessmentCCEMap.cs" />
+    <Compile Include="Models\Mapping\tblGlobalOrgSettingMap.cs" />
+    <Compile Include="Models\Mapping\tblGPSDataMap.cs" />
+    <Compile Include="Models\Mapping\tblGRN_Direct_DetailMap.cs" />
+    <Compile Include="Models\Mapping\tblGRN_Direct_HeaderMap.cs" />
+    <Compile Include="Models\Mapping\tblGRN_PO_DetailMap.cs" />
+    <Compile Include="Models\Mapping\tblGRN_PO_HeaderMap.cs" />
+    <Compile Include="Models\Mapping\tblHolidayListMap.cs" />
+    <Compile Include="Models\Mapping\tblHostelBillingMap.cs" />
+    <Compile Include="Models\Mapping\tblHostelMap.cs" />
+    <Compile Include="Models\Mapping\tblHostelRoomMap.cs" />
+    <Compile Include="Models\Mapping\tblHostelTypeMap.cs" />
+    <Compile Include="Models\Mapping\tblHostel_RoomMap.cs" />
+    <Compile Include="Models\Mapping\tblHostel_Room_StudentMap.cs" />
+    <Compile Include="Models\Mapping\tblImageGalleryMap.cs" />
+    <Compile Include="Models\Mapping\tblInstitutionMap.cs" />
+    <Compile Include="Models\Mapping\tblIssueListMap.cs" />
+    <Compile Include="Models\Mapping\tblItemCategoryMap.cs" />
+    <Compile Include="Models\Mapping\tblItemMap.cs" />
+    <Compile Include="Models\Mapping\tblItem_VendorMap.cs" />
+    <Compile Include="Models\Mapping\tblLeadFollowUpMap.cs" />
+    <Compile Include="Models\Mapping\tblLeadStatuMap.cs" />
+    <Compile Include="Models\Mapping\tblLearnoMeterCCEMap.cs" />
+    <Compile Include="Models\Mapping\tblLibraryBookAuthorMap.cs" />
+    <Compile Include="Models\Mapping\tblLibraryBookCategoryMap.cs" />
+    <Compile Include="Models\Mapping\tblLibraryBookEditionMap.cs" />
+    <Compile Include="Models\Mapping\tblLibraryBookLedgerMap.cs" />
+    <Compile Include="Models\Mapping\tblLibraryBookMap.cs" />
+    <Compile Include="Models\Mapping\tblLibraryBookPublicationMap.cs" />
+    <Compile Include="Models\Mapping\tblLibraryBookVolumeMap.cs" />
+    <Compile Include="Models\Mapping\tblLibraryMap.cs" />
+    <Compile Include="Models\Mapping\tblLoginMap.cs" />
+    <Compile Include="Models\Mapping\tblLoginUserTypeMap.cs" />
+    <Compile Include="Models\Mapping\tblMasterAccountGroupMap.cs" />
+    <Compile Include="Models\Mapping\tblMasterPermissionSetMap.cs" />
+    <Compile Include="Models\Mapping\tblMasterVoucherListMap.cs" />
+    <Compile Include="Models\Mapping\tblMedicineDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblMessageAttachmentMap.cs" />
+    <Compile Include="Models\Mapping\tblMessageCenterMap.cs" />
+    <Compile Include="Models\Mapping\tblMessageRecipientMap.cs" />
+    <Compile Include="Models\Mapping\tblNationalityMap.cs" />
+    <Compile Include="Models\Mapping\tblOrgMap.cs" />
+    <Compile Include="Models\Mapping\tblPayGroupDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblPayGroupMap.cs" />
+    <Compile Include="Models\Mapping\tblPayrollDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblPayrollMap.cs" />
+    <Compile Include="Models\Mapping\tblPermissionValueDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblProforma_InvoiceDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblProforma_InvoiceHeaderMap.cs" />
+    <Compile Include="Models\Mapping\tblProforma_ServiceInvoiceDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblProforma_ServiceInvoiceHeaderMap.cs" />
+    <Compile Include="Models\Mapping\tblProforma_TaxInvoiceHeaderMap.cs" />
+    <Compile Include="Models\Mapping\tblPurchaseOrderDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblPurchaseOrderHeaderMap.cs" />
+    <Compile Include="Models\Mapping\tblQuestionBankMap.cs" />
+    <Compile Include="Models\Mapping\tblRetail_InvoiceDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblRetail_InvoiceHeaderMap.cs" />
+    <Compile Include="Models\Mapping\tblRoleMap.cs" />
+    <Compile Include="Models\Mapping\tblRolePermissionMap.cs" />
+    <Compile Include="Models\Mapping\tblRouteMap.cs" />
+    <Compile Include="Models\Mapping\tblRouteStopMap.cs" />
+    <Compile Include="Models\Mapping\tblRoute_StopsMap.cs" />
+    <Compile Include="Models\Mapping\tblRoute_VehicleMap.cs" />
+    <Compile Include="Models\Mapping\tblService_InvoiceDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblService_InvoiceHeaderMap.cs" />
+    <Compile Include="Models\Mapping\tblStockGroupMap.cs" />
+    <Compile Include="Models\Mapping\tblStockItemMap.cs" />
+    <Compile Include="Models\Mapping\tblStreamMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentAttachmentMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentCategoryMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentCustomizeMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentCustomizeValueMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentFeePaidHeaderMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentMedicineMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentPrevQualificationReasonMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentQualificationMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentRegistrationMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentResultsCCEMap.cs" />
+    <Compile Include="Models\Mapping\tblStudentValueMap.cs" />
+    <Compile Include="Models\Mapping\tblStudent_CourseMap.cs" />
+    <Compile Include="Models\Mapping\tblSubBlockCCEMap.cs" />
+    <Compile Include="Models\Mapping\tblSubCasteMap.cs" />
+    <Compile Include="Models\Mapping\tblSubjectMap.cs" />
+    <Compile Include="Models\Mapping\tblSummativeAssessmentCCEMap.cs" />
+    <Compile Include="Models\Mapping\tblTaxDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblTaxTypeMap.cs" />
+    <Compile Include="Models\Mapping\tblTax_InvoiceDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblTax_InvoiceHeaderMap.cs" />
+    <Compile Include="Models\Mapping\tblTermCCEMap.cs" />
+    <Compile Include="Models\Mapping\tblTimeTableDetailMap.cs" />
+    <Compile Include="Models\Mapping\tblTimeTableMap.cs" />
+    <Compile Include="Models\Mapping\tblTimetable_workingDaysMap.cs" />
+    <Compile Include="Models\Mapping\tblTopicMap.cs" />
+    <Compile Include="Models\Mapping\tblTransportPaymentMap.cs" />
+    <Compile Include="Models\Mapping\tblTransportTripSheetMap.cs" />
+    <Compile Include="Models\Mapping\tblTripParticipantMap.cs" />
+    <Compile Include="Models\Mapping\tblTripSheetMap.cs" />
+    <Compile Include="Models\Mapping\tblUnitOfMeasureMap.cs" />
+    <Compile Include="Models\Mapping\tblVehicleMap.cs" />
+    <Compile Include="Models\Mapping\tblVehicleTypeMap.cs" />
+    <Compile Include="Models\Mapping\tblVendorMap.cs" />
+    <Compile Include="Models\Mapping\tblVisitorMap.cs" />
+    <Compile Include="Models\Mapping\tblVisitorMaterialMap.cs" />
+    <Compile Include="Models\Mapping\tblVoucherListMap.cs" />
+    <Compile Include="Models\Mapping\ViewMap.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\tblAccountGroup.cs" />
+    <Compile Include="Models\tblAccountLedger.cs" />
+    <Compile Include="Models\tblAdmissionStatusType.cs" />
+    <Compile Include="Models\tblAffiliation.cs" />
+    <Compile Include="Models\tblApplicationLog.cs" />
+    <Compile Include="Models\tblAppLogin.cs" />
+    <Compile Include="Models\tblAppVersion.cs" />
+    <Compile Include="Models\tblAsset.cs" />
+    <Compile Include="Models\tblAssetAttribute.cs" />
+    <Compile Include="Models\tblAssetCategory.cs" />
+    <Compile Include="Models\tblAssetCategoryAttribute.cs" />
+    <Compile Include="Models\tblAssignment.cs" />
+    <Compile Include="Models\tblAssignmentQuestion.cs" />
+    <Compile Include="Models\tblAttendance.cs" />
+    <Compile Include="Models\tblAttendanceHourly.cs" />
+    <Compile Include="Models\tblAttributeType.cs" />
+    <Compile Include="Models\tblBankDetail.cs" />
+    <Compile Include="Models\tblBarCodeSymbology.cs" />
+    <Compile Include="Models\tblBatch.cs" />
+    <Compile Include="Models\tblBatchAdmission.cs" />
+    <Compile Include="Models\tblBatchAdmissionArchive.cs" />
+    <Compile Include="Models\tblBatchAdmissionPast.cs" />
+    <Compile Include="Models\tblBlockAttributesCCE.cs" />
+    <Compile Include="Models\tblBlockCCE.cs" />
+    <Compile Include="Models\tblBranch.cs" />
+    <Compile Include="Models\tblCaste.cs" />
+    <Compile Include="Models\tblCertificate.cs" />
+    <Compile Include="Models\tblChallan_InvoiceDetail.cs" />
+    <Compile Include="Models\tblChallan_InvoiceHeader.cs" />
+    <Compile Include="Models\tblCircular.cs" />
+    <Compile Include="Models\tblCounsellor.cs" />
+    <Compile Include="Models\tblCourse.cs" />
+    <Compile Include="Models\tblCourseFeeDetail.cs" />
+    <Compile Include="Models\tblCourse_Subject.cs" />
+    <Compile Include="Models\tblCustomer.cs" />
+    <Compile Include="Models\tblDatabaseLog.cs" />
+    <Compile Include="Models\tblDepartment.cs" />
+    <Compile Include="Models\tblDesignation.cs" />
+    <Compile Include="Models\tblDietaryItem.cs" />
+    <Compile Include="Models\tblDietPlan.cs" />
+    <Compile Include="Models\tblDietPlanDetail.cs" />
+    <Compile Include="Models\tblDiscountType.cs" />
+    <Compile Include="Models\tblDriver.cs" />
+    <Compile Include="Models\tblEmployee.cs" />
+    <Compile Include="Models\tblEmployeeAdditionalInfo.cs" />
+    <Compile Include="Models\tblEmployeeAttachment.cs" />
+    <Compile Include="Models\tblEmployeeAttendance.cs" />
+    <Compile Include="Models\tblEmployeeLeaveType.cs" />
+    <Compile Include="Models\tblEmployeeSalaryComponent.cs" />
+    <Compile Include="Models\tblEmpSalaryDetail.cs" />
+    <Compile Include="Models\tblEvent.cs" />
+    <Compile Include="Models\tblEventType.cs" />
+    <Compile Include="Models\tblExamHall.cs" />
+    <Compile Include="Models\tblExamMark.cs" />
+    <Compile Include="Models\tblExamSchedule.cs" />
+    <Compile Include="Models\tblExamType.cs" />
+    <Compile Include="Models\tblFeeInstallmentDetail.cs" />
+    <Compile Include="Models\tblFeeItemDetail.cs" />
+    <Compile Include="Models\tblFeeLedgerGroup.cs" />
+    <Compile Include="Models\tblFeePaidDetail.cs" />
+    <Compile Include="Models\tblFeePaymentMode.cs" />
+    <Compile Include="Models\tblFormativeAssessmentCCE.cs" />
+    <Compile Include="Models\tblGlobalOrgSetting.cs" />
+    <Compile Include="Models\tblGPSData.cs" />
+    <Compile Include="Models\tblGRN_Direct_Detail.cs" />
+    <Compile Include="Models\tblGRN_Direct_Header.cs" />
+    <Compile Include="Models\tblGRN_PO_Detail.cs" />
+    <Compile Include="Models\tblGRN_PO_Header.cs" />
+    <Compile Include="Models\tblHolidayList.cs" />
+    <Compile Include="Models\tblHostel.cs" />
+    <Compile Include="Models\tblHostelBilling.cs" />
+    <Compile Include="Models\tblHostelRoom.cs" />
+    <Compile Include="Models\tblHostelType.cs" />
+    <Compile Include="Models\tblHostel_Room.cs" />
+    <Compile Include="Models\tblHostel_Room_Student.cs" />
+    <Compile Include="Models\tblImageGallery.cs" />
+    <Compile Include="Models\tblInstitution.cs" />
+    <Compile Include="Models\tblIssueList.cs" />
+    <Compile Include="Models\tblItem.cs" />
+    <Compile Include="Models\tblItemCategory.cs" />
+    <Compile Include="Models\tblItem_Vendor.cs" />
+    <Compile Include="Models\tblLeadFollowUp.cs" />
+    <Compile Include="Models\tblLeadStatu.cs" />
+    <Compile Include="Models\tblLearnoMeterCCE.cs" />
+    <Compile Include="Models\tblLibrary.cs" />
+    <Compile Include="Models\tblLibraryBook.cs" />
+    <Compile Include="Models\tblLibraryBookAuthor.cs" />
+    <Compile Include="Models\tblLibraryBookCategory.cs" />
+    <Compile Include="Models\tblLibraryBookEdition.cs" />
+    <Compile Include="Models\tblLibraryBookLedger.cs" />
+    <Compile Include="Models\tblLibraryBookPublication.cs" />
+    <Compile Include="Models\tblLibraryBookVolume.cs" />
+    <Compile Include="Models\tblLogin.cs" />
+    <Compile Include="Models\tblLoginUserType.cs" />
+    <Compile Include="Models\tblMasterAccountGroup.cs" />
+    <Compile Include="Models\tblMasterPermissionSet.cs" />
+    <Compile Include="Models\tblMasterVoucherList.cs" />
+    <Compile Include="Models\tblMedicineDetail.cs" />
+    <Compile Include="Models\tblMessageAttachment.cs" />
+    <Compile Include="Models\tblMessageCenter.cs" />
+    <Compile Include="Models\tblMessageRecipient.cs" />
+    <Compile Include="Models\tblNationality.cs" />
+    <Compile Include="Models\tblOrg.cs" />
+    <Compile Include="Models\tblPayGroup.cs" />
+    <Compile Include="Models\tblPayGroupDetail.cs" />
+    <Compile Include="Models\tblPayroll.cs" />
+    <Compile Include="Models\tblPayrollDetail.cs" />
+    <Compile Include="Models\tblPermissionValueDetail.cs" />
+    <Compile Include="Models\tblProforma_InvoiceDetail.cs" />
+    <Compile Include="Models\tblProforma_InvoiceHeader.cs" />
+    <Compile Include="Models\tblProforma_ServiceInvoiceDetail.cs" />
+    <Compile Include="Models\tblProforma_ServiceInvoiceHeader.cs" />
+    <Compile Include="Models\tblProforma_TaxInvoiceHeader.cs" />
+    <Compile Include="Models\tblPurchaseOrderDetail.cs" />
+    <Compile Include="Models\tblPurchaseOrderHeader.cs" />
+    <Compile Include="Models\tblQuestionBank.cs" />
+    <Compile Include="Models\tblRetail_InvoiceDetail.cs" />
+    <Compile Include="Models\tblRetail_InvoiceHeader.cs" />
+    <Compile Include="Models\tblRole.cs" />
+    <Compile Include="Models\tblRolePermission.cs" />
+    <Compile Include="Models\tblRoute.cs" />
+    <Compile Include="Models\tblRouteStop.cs" />
+    <Compile Include="Models\tblRoute_Stops.cs" />
+    <Compile Include="Models\tblRoute_Vehicle.cs" />
+    <Compile Include="Models\tblService_InvoiceDetail.cs" />
+    <Compile Include="Models\tblService_InvoiceHeader.cs" />
+    <Compile Include="Models\tblStockGroup.cs" />
+    <Compile Include="Models\tblStockItem.cs" />
+    <Compile Include="Models\tblStream.cs" />
+    <Compile Include="Models\tblStudent.cs" />
+    <Compile Include="Models\tblStudentAttachment.cs" />
+    <Compile Include="Models\tblStudentCategory.cs" />
+    <Compile Include="Models\tblStudentCustomize.cs" />
+    <Compile Include="Models\tblStudentCustomizeValue.cs" />
+    <Compile Include="Models\tblStudentFeePaidHeader.cs" />
+    <Compile Include="Models\tblStudentMedicine.cs" />
+    <Compile Include="Models\tblStudentPrevQualificationReason.cs" />
+    <Compile Include="Models\tblStudentQualification.cs" />
+    <Compile Include="Models\tblStudentRegistration.cs" />
+    <Compile Include="Models\tblStudentResultsCCE.cs" />
+    <Compile Include="Models\tblStudentValue.cs" />
+    <Compile Include="Models\tblStudent_Course.cs" />
+    <Compile Include="Models\tblSubBlockCCE.cs" />
+    <Compile Include="Models\tblSubCaste.cs" />
+    <Compile Include="Models\tblSubject.cs" />
+    <Compile Include="Models\tblSummativeAssessmentCCE.cs" />
+    <Compile Include="Models\tblTaxDetail.cs" />
+    <Compile Include="Models\tblTaxType.cs" />
+    <Compile Include="Models\tblTax_InvoiceDetail.cs" />
+    <Compile Include="Models\tblTax_InvoiceHeader.cs" />
+    <Compile Include="Models\tblTermCCE.cs" />
+    <Compile Include="Models\tblTimeTable.cs" />
+    <Compile Include="Models\tblTimeTableDetail.cs" />
+    <Compile Include="Models\tblTimetable_workingDays.cs" />
+    <Compile Include="Models\tblTopic.cs" />
+    <Compile Include="Models\tblTransportPayment.cs" />
+    <Compile Include="Models\tblTransportTripSheet.cs" />
+    <Compile Include="Models\tblTripParticipant.cs" />
+    <Compile Include="Models\tblTripSheet.cs" />
+    <Compile Include="Models\tblUnitOfMeasure.cs" />
+    <Compile Include="Models\tblVehicle.cs" />
+    <Compile Include="Models\tblVehicleType.cs" />
+    <Compile Include="Models\tblVendor.cs" />
+    <Compile Include="Models\tblVisitor.cs" />
+    <Compile Include="Models\tblVisitorMaterial.cs" />
+    <Compile Include="Models\tblVoucherList.cs" />
+    <Compile Include="Models\View.cs" />
+    <Compile Include="Models\webSchoolContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="SMSDataformatter.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="TimeTableStructure.cs" />
+    <Compile Include="Utility\EmailHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\dharan.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Attendance\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\AppManager\" />
+    <Folder Include="Views\AssesmentReport\" />
+    <Folder Include="Views\Attandance\" />
+    <Folder Include="Views\Course\" />
+    <Folder Include="Views\Example\" />
+    <Folder Include="Views\Exam\" />
+    <Folder Include="Views\Faculty\" />
+    <Folder Include="Views\FeeDetail\" />
+    <Folder Include="Views\ForgetPassword\" />
+    <Folder Include="Views\GeoLocation\" />
+    <Folder Include="Views\Holiday\" />
+    <Folder Include="Views\Homework\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\ParentRegistration\" />
+    <Folder Include="Views\PersonalDetail\" />
+    <Folder Include="Views\Register\" />
+    <Folder Include="Views\StudentSchool\" />
+    <Folder Include="Views\StudentSubjects\" />
+    <Folder Include="Views\Timetable\" />
+    <Folder Include="Views\Transport\" />
+    <Folder Include="Views\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56623</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56623/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

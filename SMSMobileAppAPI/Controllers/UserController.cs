@@ -2,6 +2,7 @@
 using SMSMobileAppAPI.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -99,6 +100,14 @@ namespace SMSMobileAppAPI.Controllers
         {
             webSchoolContext db = new webSchoolContext();
             return db.tblOrgs.Where(x => x.OrgName.ToLower() == orgName).Select(x => new { OrgId = x.Id, OrgName = x.OrgName }).SingleOrDefault();
+        }
+        public JsonResult UpdateToken(long UserId,string SenderId)
+        {
+            var User = db.tblAppLogins.Where(x => x.Id == UserId).Select(y => y).SingleOrDefault();
+            User.SenderId = SenderId;
+            db.Entry(User).State = EntityState.Modified;
+            db.SaveChanges();
+            return Json(new {status = true},JsonRequestBehavior.AllowGet);
         }
 
     }

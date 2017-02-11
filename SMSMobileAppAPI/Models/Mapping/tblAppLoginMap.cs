@@ -20,6 +20,9 @@ namespace SMSMobileAppAPI.Models.Mapping
             this.Property(t => t.Passcode)
                 .HasMaxLength(50);
 
+            this.Property(t => t.SenderId)
+                .HasMaxLength(100);
+
             // Table & Column Mappings
             this.ToTable("tblAppLogin");
             this.Property(t => t.Id).HasColumnName("Id");
@@ -29,6 +32,7 @@ namespace SMSMobileAppAPI.Models.Mapping
             this.Property(t => t.ValidTill).HasColumnName("ValidTill");
             this.Property(t => t.LastUpdated).HasColumnName("LastUpdated");
             this.Property(t => t.IsRegistered).HasColumnName("IsRegistered");
+            this.Property(t => t.SenderId).HasColumnName("SenderId");
         }
     }
 }

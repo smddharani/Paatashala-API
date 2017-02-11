@@ -138,6 +138,7 @@ namespace SMSMobileAppAPI.Controllers
                         select tableApplogin).FirstOrDefault();
             if (User != null)
             {
+
                 User.Password = SMSDataformatter.EncryptText(Password);
                 User.IsRegistered = true;
                 db.Entry(User).State = EntityState.Modified;

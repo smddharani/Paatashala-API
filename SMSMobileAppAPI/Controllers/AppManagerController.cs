@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SMSMobileAppAPI.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,11 +17,29 @@ namespace SMSMobileAppAPI.Controllers
         }
         public JsonResult GetLatestVersion()
         {
-            return Json(JsonRequestBehavior.AllowGet);
+            webSchoolContext db = new webSchoolContext();
+            var version = db.tblAppVersions.OrderByDescending(x => x.BuidDate).Take(1).ToList().Select(x => new {x.VersionId,BuildDate = x.BuidDate.Value.ToString("dd-MMM-yyyy"),x.Version,x.UpdateMessage,x.Notes}).FirstOrDefault();
+            return Json(version,JsonRequestBehavior.AllowGet);
         }
-        public JsonResult PatashalaApp()
+        public FileStreamResult PatashalaApp()
         {
-            return Json(JsonRequestBehavior.AllowGet);
+            FileStreamResult fileStreamResult = null;
+            var filePath = Server.MapPath("~/Apk/patashala.apk");
+            Stream stream = new FileStream(filePath, FileMode.Open);
+            fileStreamResult = new FileStreamResult(stream, "application/apk");
+            fileStreamResult.FileDownloadName = "Patashala.apk";
+            return fileStreamResult;
         }
+        public ActionResult UploadAPK()
+        {
+            return View("~/Views/UploadAPKFile.cshtml");
+        }
+        [HttpPost]
+        public ActionResult SaveAPKFile(HttpPostedFileBase file)
+        {
+
+            return View();
+        }
+
     }
 }

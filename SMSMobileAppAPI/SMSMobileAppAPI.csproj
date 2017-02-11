@@ -236,6 +236,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppManagerController.cs" />
+    <Compile Include="Controllers\AppVersionsController.cs" />
     <Compile Include="Controllers\AssesmentReportController.cs" />
     <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\ChangePasswordBindingModel.cs" />
@@ -655,6 +656,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Apk\patashala.apk" />
     <None Include="Properties\PublishProfiles\dharan.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -686,10 +688,16 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Attendance\Index.cshtml" />
+    <Content Include="Views\AppManager\UploadAPK.cshtml" />
+    <Content Include="Views\AppVersions\Create.cshtml" />
+    <Content Include="Views\AppVersions\Delete.cshtml" />
+    <Content Include="Views\AppVersions\Details.cshtml" />
+    <Content Include="Views\AppVersions\Edit.cshtml" />
+    <Content Include="Views\AppVersions\Index.cshtml" />
+    <Content Include="Views\UploadAPKFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AppManager\" />
     <Folder Include="Views\AssesmentReport\" />
     <Folder Include="Views\Attandance\" />
     <Folder Include="Views\Course\" />
@@ -740,7 +748,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56623</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56623/</IISUrl>
+          <IISUrl>http://localhost:56625/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

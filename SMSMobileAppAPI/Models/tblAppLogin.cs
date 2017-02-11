@@ -12,5 +12,6 @@ namespace SMSMobileAppAPI.Models
         public Nullable<System.DateTime> ValidTill { get; set; }
         public Nullable<System.DateTime> LastUpdated { get; set; }
         public Nullable<bool> IsRegistered { get; set; }
+        public string SenderId { get; set; }
     }
 }

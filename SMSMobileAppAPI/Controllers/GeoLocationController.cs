@@ -53,26 +53,26 @@ namespace SMSMobileAppAPI.Controllers
             }
         }
 
-        //public JsonResult GetStrLocation(string Routecode, string OrgId, string Lattitude, string Longitude, string nowDateTime)
-        //{ 
-        //    try
-        //    {
-        //        var datee = ConvertToDateTime(nowDateTime);
-        //        db.tblGPSDatas.Add(new tblGPSData()
-        //        {
-        //            RouteCode = Convert.ToInt64(Routecode),
-        //            OrgId = Convert.ToInt64(OrgId),
-        //            Latitude = float.Parse(Lattitude),
-        //            Longitude = float.Parse(Longitude),
-        //            Time = new DateTime(datee.Year, datee.Month, datee.Day, datee.Hour, datee.Minute, datee.Second)
-        //        });
-        //        db.SaveChanges();
-        //        return Json("Saved Successfully", JsonRequestBehavior.AllowGet);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return Json(e.ToString(), JsonRequestBehavior.AllowGet);
-        //    }
-        //}
+        public JsonResult GetStrLocation(string Routecode, string OrgId, string Lattitude, string Longitude, string nowDateTime)
+        {
+            try
+            {
+                var datee = ConvertToDateTime(nowDateTime);
+                db.tblGPSDatas.Add(new tblGPSData()
+                {
+                    RouteCode = Convert.ToInt64(Routecode),
+                    OrgId = Convert.ToInt64(OrgId),
+                    Latitude = float.Parse(Lattitude),
+                    Longitude = float.Parse(Longitude),
+                    Time = new DateTime(datee.Year, datee.Month, datee.Day, datee.Hour, datee.Minute, datee.Second)
+                });
+                db.SaveChanges();
+                return Json("Saved Successfully", JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return Json(e.ToString(), JsonRequestBehavior.AllowGet);
+            }
+        }
     }
 }

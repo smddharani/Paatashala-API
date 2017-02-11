@@ -698,6 +698,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DB Backup\" />
     <Folder Include="Views\AssesmentReport\" />
     <Folder Include="Views\Attandance\" />
     <Folder Include="Views\Course\" />
